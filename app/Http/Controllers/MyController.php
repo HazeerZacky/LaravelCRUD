@@ -22,12 +22,12 @@ class MyController extends Controller
 
     //===========================================================    User Function Start   =======================
 
-    // public function getusers(){
+    public function getusers(){
 
-    //     $cont = DB::table('contacts')->get();
+    $cont = DB::table('contacts')->get();
 
-    //     return view('viewusers',compact('cont'));
-    // }
+    return view('viewusers',compact('cont'));
+    }
 
 
     public function adduser(Request $req){
@@ -123,6 +123,7 @@ class MyController extends Controller
             'message' => 'Successfully Updated', 
             'alert-type' => 'success'
         );
+
         return redirect()->back()->with($notification);
     }
 }

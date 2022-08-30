@@ -162,33 +162,13 @@
                   <input type="hidden" id="contactNo<?php echo $k; ?>" value="{{$con->contactNo}}">
                   <input type="hidden" id="email<?php echo $k; ?>" value="{{$con->email}}">
                   <input type="hidden" id="address<?php echo $k; ?>" value="{{$con->address}}">
-                    
-                    <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#DeleteUser">Delete</button>
+                    <a  href="{{route('deleteuser',$con->id)}}" class="btn btn-danger btn-sm">Delete</a>
                     <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" onclick="edit(<?php echo $k; ?>)" data-bs-target="#EditUser">Edit</button>
                 </td>
               </tr>
-              <?php $k++; ?>
-                <!-- Delete Conformation Model Start -->
-                <div class="modal fade" id="DeleteUser">
-                        <div class="modal-dialog modal-sm">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h4 class="modal-title">&#11088;Delete Confirmation</h4>
-                              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                              </button>
-                            </div>
-                            <div class="modal-body">
-                              <p><b>Are you sure you want to delete?</b></p>
-                            </div>
-                            <div class="modal-footer justify-content-between">
-                              <button type="button" class="btn btn-default btn-sm" data-bs-dismiss="modal">No</button>
-                              <a  href="{{route('deleteuser',$con->id)}}" class="btn btn-danger btn-sm">Yes</a> <!-- $cls->id = passing variable-->
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <!-- /.modal -->
-                  <!-- Delete Conformation Model End-->
+              <?php $k++;?>
+              <?php echo $con->id;?>
+                
               @endforeach
           </tbody>
           <tfoot>
